@@ -9,7 +9,8 @@ body,td,th,p,ul{
 
 body {
 	background-color: #2C2F3F;
-	margin: 0;
+  margin: 0;
+  padding: 0;
 	position:relative;
 }
 li {
@@ -93,10 +94,9 @@ nav h1 a {
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
-    background-color: #eee;
-    font-size: 17px;
+    background-color: #97939A;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
 
 /* Display list items side by side */
@@ -107,21 +107,15 @@ nav h1 a {
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
-    color: black;
+    font-weight: bold;
     content: "/\00a0";
 }
 
-/* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #B73C37;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
-/* Add a color on mouse-over */
-#breadcrumb li a:hover {
-    color: #B73C37;
-    text-decoration: underline;
-}
 /* ====================== Map ====================== */
 #map-container {
   background-color: #97939A;
@@ -137,7 +131,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Filtering ====================== */
-#restaurant-container {
+#restaurants-container {
   margin: 0;
   padding: 0;
   min-height: 600px;
@@ -154,7 +148,8 @@ nav h1 a {
   text-align: start;
   font-weight: 400;
   line-height: 1;
-  margin: 6% 5% 4% 5%;
+  margin: 0% 5% 4% 5%;
+  padding: 5% 0 0 0;
 }
 
 .filter-selectors {
@@ -173,6 +168,7 @@ nav h1 a {
   font-family: Arial,sans-serif;
   font-size: 1em;
   text-align-last: center;
+  width: 40%;
   height: 60px;
   letter-spacing: 0;
   margin: 0;
@@ -184,11 +180,11 @@ nav h1 a {
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #2C2F3F;
-  margin: 10% 0 8% 0;
+  margin: 10% 0% 8% 0%;
   padding: 0%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -196,18 +192,22 @@ nav h1 a {
 #restaurants-list li {
   background-color: #EDE5CF;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 4% 0;
-  width: 90%;
+  margin: 3% 2%;
+  max-width: 372px;
+  height: auto;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  flex-grow: 1;
+  list-style-type: none;
+  align-self: stretch;
 }
 
 #restaurants-list li h1 {
   color: #2C2F3F;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 8% 5% 8% 5%;
-  font-weight: 600;
-  letter-spacing: 2px;
+  margin: 8% 3% 5% 3%;
+  font-weight: 550;
+  letter-spacing: 0.5px;
   line-height: 1.3;
   text-align: center;
   text-transform: uppercase;
@@ -267,12 +267,6 @@ nav h1 a {
   width: 100%;
   height: 0;
   padding-bottom: 100%;
-}
-
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
 }
 
 #restaurant-container {
@@ -357,14 +351,39 @@ nav h1 a {
 /* ====================== Media Queries ====================== */
 /*     Default layout is for iPhone 5/SE sizing 320 x 568      */
 
-@media only screen and (min-width: 400px) {
 
-  body,td,th,p,ul{
-    font-size: 12pt;
+
+@media only screen and (min-width: 425px) {
+  #map {
+    padding: 0 0 80%;
   }
+  
+}
 
-  h3 {
-    font-size: 12pt;
+@media only screen and (min-width: 500px) {
+  #map {
+    padding: 0 0 70%;
   }
+  
+}
 
+@media only screen and (min-width: 600px) {
+  #map {
+    padding: 0 0 60%;
+  }
+  
+}
+
+@media only screen and (min-width: 700px) {
+  #map {
+    padding: 0 0 50%;
+  }
+  
+}
+
+@media only screen and (min-width: 1024px) {
+  #map {
+    padding: 0 0 40%;
+  }
+  
 }
