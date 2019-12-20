@@ -81,11 +81,11 @@ nav h1 a {
 }
 
 #breadcrumb {
-    padding: 10px 40px 16px;
     list-style: none;
     background-color: #97939A;
     margin: 0;
     width: 100%;
+    padding: 0;
 }
 
 /* Display list items side by side */
@@ -130,6 +130,7 @@ nav h1 a {
   width: 100%;
   height: 100px;
   background-color: #B73C37;
+  margin: 0;
 }
 
 .filter-options h2 {
@@ -137,7 +138,7 @@ nav h1 a {
   text-align: start;
   font-weight: 400;
   line-height: 1;
-  margin: 0% 5% 4% 5%;
+  margin: 0 0 4% 5%;
   padding: 5% 0 0 0;
 }
 
@@ -147,8 +148,7 @@ nav h1 a {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-evenly;
-  margin: 0% 0 5% 0;
+  justify-content: center;
 }
 
 .filter-selectors select {
@@ -157,11 +157,12 @@ nav h1 a {
   font-family: Arial,sans-serif;
   font-size: 1em;
   text-align-last: center;
-  width: 40%;
-  max-width: 234px;
+  width: 42%;
+  min-width: fit-content;
+  max-width: 200px;
   min-height: 60px;
   letter-spacing: 0;
-  margin: 0;
+  margin: 0 2%;
   border-top-left-radius: 1em;
   border-bottom-right-radius: 1em;
   padding: 2%;
@@ -253,13 +254,16 @@ nav h1 a {
 }*/
 
 .inside #map-container {
-    background-color: #97939A;
+  background-color: #97939A;
+  margin: 0;
+  padding: 0;
 }
 
 .inside #map {
   width: 100%;
   height: 0;
-  padding-bottom: 100%;
+  padding: 0 0 100%;
+  margin: 0;
 }
 
 #restaurant-container {
@@ -349,18 +353,31 @@ nav h1 a {
     font-size: 0.9375em;
   }
 
+  .filter-selectors select {
+    min-height: 65px;
+  }
+
   #restaurants-list li {
     max-width: 350px;
   }
+  
 }
 
 @media only screen and (min-width: 425px) {
   #map {
     padding: 0 0 80%;
   }
+  .filter-options h2 {
+    margin: 0 0 2% 5%;
+  }
 
   #restaurants-list li {
     max-width: 360px;
+  }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
+    padding: 0 0 80%;
   }
 }
 
@@ -368,18 +385,50 @@ nav h1 a {
   #map {
     padding: 0 0 70%;
   }
-  
+
+  .filter-selectors select {
+    min-height: 70px;
+  }
+
+   /* ====================== Restaurant Details ====================== */
+   .inside #map {
+    padding: 0 0 70%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   #map {
     padding: 0 0 60%;
   }
+
+  .filter-options h2 {
+    text-align: center;
+    padding: 3% 0 0 0;
+    margin: 0 0 2% 0;
+    }
   
+    .filter-selectors select {
+      width: 200px;
+      min-height: 75px;
+    }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
+    padding: 0 0 60%;
+  }
 }
 
 @media only screen and (min-width: 700px) {
   #map {
+    padding: 0 0 50%;
+  }
+
+  #restaurants-list {
+    margin-top: 6%;
+  }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
     padding: 0 0 50%;
   }
 }
@@ -392,12 +441,20 @@ nav h1 a {
   #map {
     padding: 0 0 40%;
   }
+
+  .filter-options h2 {
+    padding: 2.5% 0 0 0;
+  }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
+    padding: 0 0 40%;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
   body {
      margin: 0 1%;
-    font-size: 1.125em;
   }
 
   nav {
@@ -416,6 +473,22 @@ nav h1 a {
     height: 125px;
   }
 
+  .filter-options h2 {
+    text-align: end;
+    margin-right: 25%;
+    padding: 2% 0 0 0;
+}
+.filter-selectors {
+  justify-content: flex-end;
+}
+.filter-selectors select {
+  width: 250px;
+}
+
+  #restaurants-list {
+    margin-top: 4%;
+  }
+
   #restaurants-list li {
     max-width: 400px;
   }
@@ -423,12 +496,17 @@ nav h1 a {
   #restaurants-list li a {
     height: 94px;
   }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
+    padding: 0 0 30%;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
   body {
     margin: 0 2%;
-    font-size: 1.2em;
+    font-size: 1.125em;
   }
 
   nav {
@@ -447,6 +525,11 @@ nav h1 a {
     height: 150px;
   }
 
+  .filter-options h2 {
+    margin-bottom: 1.5%;
+    margin-right: 20%;
+  }
+
   #restaurants-list li {
     max-width: 420px;
   }
@@ -454,11 +537,16 @@ nav h1 a {
   #restaurants-list li a {
     height: 100px;
   }
+
+  /* ====================== Restaurant Details ====================== */
+  .inside #map {
+    padding: 0 0 25%;
+  }
 }
 
 @media only screen and (min-width: 3000px) {
   body {
-    font-size: 1.25em;
+    font-size: 1.2em;
   }
 
   nav {
