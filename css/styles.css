@@ -81,11 +81,14 @@ nav h1 a {
 }
 
 #breadcrumb {
-    list-style: none;
-    background-color: #97939A;
-    margin: 0;
-    width: 100%;
-    padding: 0;
+  list-style: none;
+  background-color: #B73C37;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  height: 75px;
+  align-items: center;
+  justify-items: center;
 }
 
 /* Display list items side by side */
