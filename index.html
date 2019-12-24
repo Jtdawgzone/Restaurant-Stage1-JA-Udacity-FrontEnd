@@ -40,6 +40,7 @@
               name="neighborhoods"
               onchange="updateRestaurants()"
               aria-label="Filter by neighborhoods"
+              aria-controls="restaurants-list"
             >
               <option value="all">Neighborhoods</option>
             </select>
@@ -48,12 +49,13 @@
               name="cuisines"
               onchange="updateRestaurants()"
               aria-label="Filter by cuisine type"
+              aria-controls="restaurants-list"
             >
               <option value="all">Cuisines</option>
             </select>
           </div>
         </div>
-        <ul id="restaurants-list"></ul>
+        <ul id="restaurants-list" role="region" aria-live="polite" aria-atomic="true"></ul>
       </section>
     </main>
     <script

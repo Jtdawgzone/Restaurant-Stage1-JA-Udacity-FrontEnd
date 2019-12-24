@@ -183,10 +183,11 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute("aria-label", `View more information about ${restaurant.name}`);
   more.tabIndex = 0;
-  li.append(more)
+  li.append(more);
 
-  return li
+  return li;
 }
 
 /**
