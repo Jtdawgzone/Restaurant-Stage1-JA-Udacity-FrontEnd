@@ -150,7 +150,31 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+   let imageUrl = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}-800w.jpg`;
+    return imageUrl;
+  }
+
+  /**
+   * 
+   * Restaurant image src set for dynamic image loading
+   */
+  static imageSrcSetForRestaurant(restaurant) {
+    const imageUrl = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}`;
+    return `${imageUrl}-300w.jpg 300w,
+          ${imageUrl}-360w.jpg 360w,
+          ${imageUrl}-558w.jpg 558w,
+          ${imageUrl}-800w.jpg 800w`;
+  }
+
+  /**
+   * 
+   * Restaurant sizes attribute so browser can perform dynamic image loading
+   */
+  static imageSizeAttributesForRestaurant(restaurant) {
+    return `(max-width: 320px) 300w,
+            (max-width: 386px) 360w,
+            (max-width: 600px) 558w,
+            800w`;
   }
 
   /**
